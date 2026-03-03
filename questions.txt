@@ -1,7 +1,7 @@
 Tell the valency of Hydrogen (H)
 1+
 
-Tell the valency of Potasium (K)
+Tell the valency of Potassium (K)
 1+
 
 Tell the valency of Sodium (Na)
