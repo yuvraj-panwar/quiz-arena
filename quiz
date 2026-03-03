@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz Arena</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #eef2f7;
+      text-align: center;
+      padding: 30px;
+    }
+    .box {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 700px;
+      margin: auto;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 15px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    input[type="text"] {
+      padding: 5px;
+      margin: 5px;
+      width: 60%;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h2>Quiz Arena</h2>
+
+  <input type="text" id="username" placeholder="Enter your name"><br>
+  <button onclick="startQuiz()">Start Quiz</button>
+
+  <div id="quizArea"></div>
+  <div id="result"></div>
+
+  <h3>Leaderboard</h3>
+  <ol id="leaderboardList"></ol>
+</div>
+
+<script>
+let questions = [];
+let score = 0;
+
+async function loadQuestions() {
+  const response = await fetch("questions.txt");
+  const text = await response.text();
+  parseTXT(text);
+}
+
+function parseTXT(text) {
+  questions = [];
+  const blocks = text.split("\n\n");
+
+  blocks.forEach(block => {
+    const lines = block.trim().split("\n");
+    if (lines.length >= 2) {
+      questions.push({
+        question: lines[0],
+        answer: lines[1].trim()
+      });
+    }
+  });
+}
+
+async function startQuiz() {
+  await loadQuestions();
+  renderQuiz();
+}
+
+function renderQuiz() {
+  let quizHTML = "<form id='quizForm'>";
+  questions.forEach((q, index) => {
+    quizHTML += `<p>${index+1}. ${q.question}</p>`;
+    quizHTML += `<input type="text" name="q${index}"><br>`;
+  });
+  quizHTML += "<button type='button' onclick='submitQuiz()'>Submit</button></form>";
+  document.getElementById("quizArea").innerHTML = quizHTML;
+}
+
+function submitQuiz() {
+  score = 0;
+  questions.forEach((q, index) => {
+    const userAnswer = document.querySelector(`input[name="q${index}"]`).value.trim();
+    if (userAnswer.toLowerCase() === q.answer.toLowerCase()) score++;
+  });
+
+  document.getElementById("result").innerHTML =
+    "Score: " + score + "/" + questions.length;
+
+  saveScore();
+  showLeaderboard();
+}
+
+function saveScore() {
+  const name = document.getElementById("username").value || "Anonymous";
+  let leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
+  leaderboard.push({ name: name, score: score });
+  leaderboard.sort((a,b) => b.score - a.score);
+  localStorage.setItem("leaderboard", JSON.stringify(leaderboard));
+}
+
+function showLeaderboard() {
+  let leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
+  let list = "";
+  leaderboard.forEach(player => {
+    list += `<li>${player.name} - ${player.score}</li>`;
+  });
+  document.getElementById("leaderboardList").innerHTML = list;
+}
+
+showLeaderboard();
+</script>
+
+</body>
+</html>
