@@ -1,0 +1,128 @@
+Tell the valency of Hydrogen (H)
+1+
+
+Tell the valency of Pottasium (K)
+1+
+
+Tell the valency of Sodium (Na)
+1+
+
+Tell the valency of Silver (Ag)
+1+
+
+Tell the valency of Copper(Cuprous) (Cu)
+1+
+
+Tell the valency of Gold(Aurous) (Au)
+1+
+
+Tell the valency of Ammonium (NH4)
+1+
+
+Tell the valency of Barium (Ba)
+2+
+
+Tell the valency of Calcium (Ca)
+2+
+
+Tell the valency of Magnesium (Mg)
+2+
+
+Tell the valency of Zinc (Zn)
+2+
+
+Tell the valency of Cobalt (Co)
+2+
+
+Tell the valency of Copper(Cupric) (Cu)
+2+
+
+Tell the valency of Iron(Ferrous) (Fe)
+2+
+
+Tell the valency of Lead (Pb)
+2+
+
+Tell the valency of Aluminium (Al)
+3+
+
+Tell the valency of Chromium (Cr)
+3+
+
+Tell the valency of Iron(Ferric) (Fe)
+3+
+
+Tell the valency of Gold(Auric) (Au)
+3+
+
+Tell the valency of Chlorine (Cl)
+1-
+
+Tell the valency of Bromine (Br)
+1-
+
+Tell the valency of Iodide (I)
+1-
+
+Tell the valency of Hydroxide (OH)
+1-
+
+Tell the valency of Nitrate (NO3)
+1-
+
+Tell the valency of Nitrite (NO2)
+1-
+
+Tell the valency of Hydrogen Carbonate(Bi-Carbonate) (HCO3)
+1-
+
+Tell the valency of Cyanide (CN)
+1-
+
+Tell the valency of Permanganate (MnO4)
+1-
+
+Tell the valency of Chlorate (ClO3)
+1-
+
+Tell the valency of Oxide (O)
+2-
+
+Tell the valency of Carbonate (CO3)
+2-
+
+Tell the valency of Sulphate (SO4)
+2-
+
+Tell the valency of Sulphite (SO3)
+2-
+
+Tell the valency of Manganate (MnO4)
+2-
+
+Tell the valency of Oxalate (C2O4)
+2-
+
+Tell the valency of Chromate(CrO4) (CrO4)
+2-
+
+Tell the valency of Dichromate(Cr2O7) (Cr2O7)
+2-
+
+Tell the valency of Sulphide (S)
+2-
+
+Tell the valency of Nitride (N)
+3-
+
+Tell the valency of Phosphide (P)
+3-
+
+Tell the valency of Phosphate (PO4)
+3-
+
+Tell the valency of Borate (BO3)
+3-
+
+Tell the valency of Arsenate (AsO4)
+3-
